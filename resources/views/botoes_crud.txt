@@ -1,0 +1,18 @@
+                                        @if ($_SESSION['SEG_PERFIL'] == "1" OR $_SESSION['SEG_PERFIL'] == "7")
+
+                                            <a class="btn btn-sm green btn-outline tooltips" title="Editar" onclick="editar('<?= $linha['ID_SETOR'] ?>', '<?= $linha['NOME_SETOR'] ?>', '<?= $linha['SIGLA_SETOR'] ?>', '<?= $linha['ESTA_ATIVO'] ?>');">
+                                            <i class="fa fa-edit" ></i></a>
+
+                                            <a class="btn btn-sm grey-salsa btn-outline tooltips" title="Ativar / Desativar" onclick="comando('desativar', '<?= $linha['ID_SETOR'] ?>');">
+                                            <i class="fa fa-refresh"></i></a>
+
+                                            @if ($_SESSION['SEG_PERFIL'] == "1")
+                                                <a class="btn btn-sm red btn-outline tooltips" 
+                                                    data-toggle="confirmation" 
+                                                    data-funcao="excluir" 
+                                                    data-id="<?= $linha['ID_SETOR'] ?>"
+                                                    data-title="Deseja Realmente Excluir o Registro?" >
+                                                <i class="fa fa-trash"></i></a>
+                                            @endif   
+
+                                        @endif 
